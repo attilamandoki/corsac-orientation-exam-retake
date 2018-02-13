@@ -1,0 +1,29 @@
+package com.greenfoxacademy.corsacorientationexamretake.controllers;
+
+import com.greenfoxacademy.corsacorientationexamretake.models.Ticket;
+import com.greenfoxacademy.corsacorientationexamretake.models.User;
+import com.greenfoxacademy.corsacorientationexamretake.services.TicketService;
+import com.greenfoxacademy.corsacorientationexamretake.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+public class ErrorReporterWebController {
+
+  @Autowired
+  UserService userService;
+
+  @Autowired
+  TicketService ticketService;
+
+  @GetMapping(value = "/")
+  public String newTicketForm(Model model) {
+    List<User> users = new ArrayList<>(userService.listOfAllUsers());
+    return "index";
+  }
+}

@@ -16,6 +16,10 @@ public class Ticket {
   @Column(name = "reported_at")
   private Date reportedAt;
 
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "name")
+  private User user;
+
   public Ticket() {
   }
 

@@ -1,31 +1,22 @@
 package com.greenfoxacademy.corsacorientationexamretake.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
   private String name;
+
+  @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+  private List<Ticket> tickets;
 
   public User() {
   }
 
   public User(String name) {
     this.name = name;
-  }
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
   }
 
   public String getName() {

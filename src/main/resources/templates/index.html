@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+  <title>Error reporter</title>
+</head>
+<body>
+<form action="#" th:action="@{/index}" th:object="${users}" method="post">
+  <select th:field="*{name}">
+    <option th:each="actualOwner:${users}"
+            th:value="${actualOwner.ownerName}" th:text="${actualOwner.ownerName}"></option>
+  </select>
+  <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+  <p>Name: <input type="text" th:field="*{name}"/></p>
+  <p>Breed: <input type="text" th:field="*{breed}"/></p>
+</form>
+</body>
+</html>
