@@ -10,4 +10,6 @@ public interface UserService {
 
   List<User> listOfAllUsers();
 
+  User findOneByName(String name);
+
 }

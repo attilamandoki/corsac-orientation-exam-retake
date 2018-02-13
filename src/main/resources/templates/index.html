@@ -8,14 +8,15 @@
   <title>Error reporter</title>
 </head>
 <body>
-<form action="#" th:action="@{/index}" th:object="${users}" method="post">
+<form action="#" th:action="@{/index}" th:object="${ticketDTO}" method="post">
   <select th:field="*{name}">
-    <option th:each="actualOwner:${users}"
-            th:value="${actualOwner.ownerName}" th:text="${actualOwner.ownerName}"></option>
+    <option th:each="submitingUser:${users}"
+            th:value="${submitingUser.userName}" th:text="${submitingUser.userName}"></option>
   </select>
-  <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-  <p>Name: <input type="text" th:field="*{name}"/></p>
-  <p>Breed: <input type="text" th:field="*{breed}"/></p>
+  <p>Manufacturer: <input type="text" th:field="*{manufacturer}"/></p>
+  <p>Serial number: <input type="text" th:field="*{serialnumber}"/></p>
+  <p>Description: <input type="text" th:field="*{description}"/></p>
+  <p><input type="submit" value="Report"/></p>
 </form>
 </body>
 </html>
