@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+  <title>Error reporter</title>
+</head>
+<body>
+<table style="width:50%; border: 4px solid; font-size:large"
+       class="table-primary table-striped table-sm border border-warning">
+  <tr align="center">
+    <th>Id</th>
+    <th>Reporter</th>
+    <th>Manufacturer</th>
+    <th>Serial number</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+  <tr align="center" th:each="ticket : ${tickets}" th:object="${ticket}">
+    <th th:text="*{id}"></th>
+    <th th:text="*{name}"></th>
+    <th th:text="*{manufacturer}"></th>
+    <th th:text="*{serialnumber}"></th>
+    <th th:text="*{description}"></th>
+    <th th:text="*{reported_at}"></th>
+  </tr>
+</table>
+</body>
+</html>

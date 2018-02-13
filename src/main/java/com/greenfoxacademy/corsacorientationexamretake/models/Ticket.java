@@ -78,4 +78,12 @@ public class Ticket {
   public void setReportedAt(Date reportedAt) {
     this.reportedAt = reportedAt;
   }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 }

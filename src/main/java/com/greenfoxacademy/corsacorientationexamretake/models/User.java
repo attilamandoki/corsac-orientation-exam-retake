@@ -11,9 +11,6 @@ public class User {
   private long id;
   private String name;
 
-  @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
-  private List<Ticket> tickets;
-
   public User() {
   }
 

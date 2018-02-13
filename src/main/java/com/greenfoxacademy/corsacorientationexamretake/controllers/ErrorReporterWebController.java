@@ -25,7 +25,7 @@ public class ErrorReporterWebController {
   TicketService ticketService;
 
   @GetMapping(value = "/")
-  public String newTicketForm(Model model) {
+  public String newTicketForm(@ModelAttribute TicketDTO ticketDTO) {
     List<User> users = new ArrayList<>(userService.listOfAllUsers());
     return "index";
   }
@@ -34,6 +34,15 @@ public class ErrorReporterWebController {
   public String submitNewTicket(@ModelAttribute TicketDTO ticketDTO) {
     User user = new User();
     Ticket ticket = new Ticket();
-    ticket.setReporter(userService.findOneByName(user.getName()));
+   // ticket.setReporter(userService.findOneByName(user.getName()));
+    return "redirect:/";
   }
+
+  @GetMapping(value = "/list")
+  public String listOfSubmittedTickets(Model model) {
+    List<Ticket> tickets = new ArrayList<>(ticketService.listOfAllTickets());
+    model.addAttribute("tickets", tickets);
+    return "/list";
+  }
+  
 }

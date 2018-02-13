@@ -9,9 +9,9 @@
 </head>
 <body>
 <form action="#" th:action="@{/index}" th:object="${ticketDTO}" method="post">
-  <select th:field="*{name}">
+  <select th:field="*{users}">
     <option th:each="submitingUser:${users}"
-            th:value="${submitingUser.userName}" th:text="${submitingUser.userName}"></option>
+            th:value="${submitingUser.}" th:text="${submitingUser.userName}"></option>
   </select>
   <p>Manufacturer: <input type="text" th:field="*{manufacturer}"/></p>
   <p>Serial number: <input type="text" th:field="*{serialnumber}"/></p>
