@@ -82,14 +82,14 @@ Example query:
 ## 2) Question time
   What is the difference between unit and integration testing?
   
-  Unit testing:
+Unit testing:
 - Unit testing is done to check if a piece of code, a part of our program is doing what it should do.
 - As it is to check smaller parts of our code when writing a unit test shorter codes are used that target just a single class.
 - Unit tests should have no dependencies on code outside the unit tested.
 - It is done to test each unit of our program separately and ensure that each unit is working as expected.
 - It focuses on the testing the functionality of individual units and does not uncover the issues arises when different modules are interacting with each other.
-  
-  Integration testing:
+
+Integration testing:
 - Integration testing is a type of testing to check if different pieces of the modules are working together.
 - The scope of Integration testing is wide, it covers the whole application under test, so it is more complex than Unit testing.
 - Integration testing is dependent on other outside systems like databases, hardware allocated for them etc.
